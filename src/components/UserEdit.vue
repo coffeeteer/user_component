@@ -3,7 +3,7 @@
     <h3>You may edit the User here</h3>
     <p>Edit me!</p>
     <p>User Age: {{ userAge }}</p>
-    <button @click="resetAge">Change Age</button>
+    <button @click="changeAge">Change Age</button>
   </div>
 </template>
 
@@ -13,10 +13,10 @@ import { eventBus } from "../main";
 export default {
   props: ["userAge"],
   methods: {
-    resetAge() {
+    changeAge() {
       this.userAge = 30;
-      //   this.$emit("ageWasReset", this.userAge);
-      //   eventBus.$emit("ageWasReset", this.userAge);
+      //   this.$emit("ageWasEdited", this.userAge);
+      //   eventBus.$emit("ageWasEdited", this.userAge);
       eventBus.changeAge(this.userAge);
     }
   }

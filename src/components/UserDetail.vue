@@ -31,7 +31,7 @@ export default {
     }
   },
   created() {
-    eventBus.$on("ageWasReset", age => {
+    eventBus.$on("ageWasEdited", age => {
       this.userAge = age;
     });
   }
