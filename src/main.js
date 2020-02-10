@@ -1,7 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+
+export const eventBus = new Vue({
+  methods: {
+    changeAge(age) {
+      this.$emit("ageWasReset", age);
+    }
+  }
+});
 
 new Vue({
-  el: '#app',
+  el: "#app",
   render: h => h(App)
-})
+});
